@@ -1,9 +1,20 @@
-name: Python Hello World
+name: Python and Telemetry Workflow
 
 on:
   push:
+    branches:
+      - main  # Adjust as needed for your branch
+
+permissions:
+  pull-requests: write
 
 jobs:
+  workflow-telemetry-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect Workflow Telemetry
+        uses: catchpoint/workflow-telemetry-action@v2
+
   hello_world_job:
     runs-on: ubuntu-latest
     steps:
@@ -13,9 +24,4 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'  # Use the default latest version of Python 3
-
-      - name: Run Python script
-        run: |
-          echo "print('Hello World')" > hello.py
-          python hello.py
+          python-version: '3.x'  # Use the default latest
