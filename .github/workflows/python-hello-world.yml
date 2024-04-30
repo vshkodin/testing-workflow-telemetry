@@ -2,8 +2,6 @@ name: Python and Telemetry Workflow
 
 on:
   push:
-    branches:
-      - main  # Adjust as needed for your branch
 
 permissions:
   pull-requests: write
