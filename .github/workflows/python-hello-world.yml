@@ -29,7 +29,12 @@ jobs:
           echo "print('Hello World')" > hello.py
           python hello.py
 
-      - name: Update GitHub Step Summary
-        run: |
-          echo "### Hello World Results" >> $GITHUB_STEP_SUMMARY
-          echo "Successfully ran Python script and printed 'Hello World'." >> $GITHUB_STEP_SUMMARY
+      # - name: Update GitHub Step Summary
+      #   run: |
+      #     echo "### Hello World Results" >> $GITHUB_STEP_SUMMARY
+      #     echo "Successfully ran Python script and printed 'Hello World'." >> $GITHUB_STEP_SUMMARY
+
+      # - name: Intentional Failure Step
+      #   run: |
+      #     echo "This step is designed to fail."
+      #    exit 1
